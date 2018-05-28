@@ -2,22 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>无标题文档</title>
+<title>South American Immigration Rank</title>
+
 <style type="text/css">
-
 body{
-	background-image: url("https://raw.githubusercontent.com/allsetformove/9321-assignment-3/master/timg-1.jpg");/* 背景图片 */
-	background-repeat:no-repeat;/* 不重复 */
-	background-size:100% 100%;/*平铺 */
+    background-image: url('../static/images/main2.jpg');
+	background-repeat:no-repeat;
+	background-size:100% 100%;
 	background-attachment: fixed;
-}
-
-table{
-  border-collapse:collapse;
-  border-bottom-color:#999999;
-  margin:5% 0% 0% 9%;
-  float:left;
-  
 }
 
 a{
@@ -25,70 +17,118 @@ a{
 	text-decoration:none;
 	color:white;
 	padding:0.2em 0.6em;
-	border-right:1px solid white;
 }
 a:hover {background-color:#ff3300}
 
-.STYLE1 {color: #FFFFFF}
-
+.STYLE1 {color: #FFFFFF; align-content: left;}
 
 </style>
+
+
 </head>
 
 <body>
-<table width="100" border="0">
-  <tr>
-    <td><a class="STYLE1" href="main.html">Main page</a></td>
-  </tr>
-  <tr>
-    <td><span class="STYLE1">&nbsp;</span></td>
-  </tr>   
-  <tr>
-    <td><a class="STYLE1" href="Argentina.html">Argentina</a></td>
-  </tr>
-  <tr>
-    <td><span class="STYLE1">Bolivia</span></td>
-  </tr>
-  <tr>
-    <td><span class="STYLE1">Brazil</span></td>
-  </tr>
-  <tr>
-    <td><span class="STYLE1">Chile</span></td>
-  </tr>
-  <tr>
-    <td><span class="STYLE1">Colombia</span></td>
-  </tr>
-  <tr>
-    <td><span class="STYLE1">Ecuador</span></td>
-  </tr>
-  <tr>
-    <td><span class="STYLE1">Guyana</span></td>
-  </tr>
-  <tr>
-    <td><span class="STYLE1">Paraguay</span></td>
-  </tr>
-  <tr>
-    <td><span class="STYLE1">Peru</span></td>
-  </tr>
-  <tr>
-    <td><span class="STYLE1">Suriname</span></td>
-  </tr>
-  <tr>
-    <td><span class="STYLE1">Uruguay</span></td>
-  </tr>
-  <tr>
-    <td><span class="STYLE1">Venezuela</span></td>
-  </tr>
+<table width="100" border="0" style="border-collapse:collapse; border-bottom-color:#999999; margin:5% 0% 0% 9%; float:left;">
+    <tr>
+        <td><a class="STYLE1" href="main.html">Main page</a></td>
+    </tr>
+    <tr>
+        <td><span class="STYLE1">&nbsp;</span></td>
+    </tr>
+    <tr>
+        <td><a class="STYLE1" href="dataanalysis.html">Show&nbsp;me&nbsp;<br>the&nbsp;data!</a></td>
+    </tr>
+    <tr>
+        <td><span class="STYLE1">&nbsp;</span></td>
+    </tr>
+    <tr>
+        <td><a class="STYLE1" href="Argentina.html">Argentina</a></td>
+    </tr>
+    <tr>
+        <td><a class="STYLE1" href="Bolivia.html">Bolivia</a></td>
+    </tr>
+    <tr>
+        <td><a class="STYLE1" href="Brazil.html">Brazil</a></td>
+    </tr>
+    <tr>
+        <td><a class="STYLE1" href="Chile.html">Chile</a></td>
+    </tr>
+    <tr>
+        <td><a class="STYLE1" href="Colombia.html">Colombia</a></td>
+    </tr>
+    <tr>
+        <td><a class="STYLE1" href="Ecuador.html">Ecuador</a></td>
+    </tr>
+    <tr>
+        <td><a class="STYLE1" href="Guyana.html">Guyana</a></td>
+    </tr>
+    <tr>
+        <td><a class="STYLE1" href="Paraguay.html">Paraguay</a></td>
+    </tr>
+    <tr>
+        <td><a class="STYLE1" href="Peru.html">Peru</a></td>
+    </tr>
+    <tr>
+        <td><a class="STYLE1" href="Suriname.html">Suriname</a></td>
+    </tr>
+    <tr>
+        <td><a class="STYLE1" href="Uruguay.html">Uruguay</a></td>
+    </tr>
+    <tr>
+        <td><a class="STYLE1" href="Venezuela.html">Venezuela</a></td>
+    </tr>
 </table>
 
-<table width="550" height="780" border="1" style="float:right; margin-right:10%; margin-top:5%">
-  <tr>
-    <td>&nbsp;</td>
-  </tr>
+<table width="550" height="780" border="1" style="float:right; margin-right:10%; margin-top:5%; border-collapse:collapse; color: red;">
+    <tr>
+        <td align="center" colspan="2" style="font-family: 'Arial Black'; font-size: 40px">
+            South American Immigration Rank
+        </td>
+    </tr>
+    {% for s in range(12): %}
+        <tr>
+            <td style="font-family: 'Arial Black'" width="250px">
+                {{final_score[s][0]}}
+            </td>
+            <td style="font-family: 'Arial Black'">
+                {{final_score[s][1]}}
+            </td>
+        </tr>
+    {% endfor %}
 </table>
 
 
 
+
+<script type="text/javascript">
+    gvChartInit();
+    $(document).ready(function(){
+        $('#myTable1').gvChart({
+            chartType: 'PieChart',
+            gvSettings: {
+                vAxis: {title: 'No of players'},
+                hAxis: {title: 'Month'},
+                width: 600,
+                height: 350
+            }
+        });
+    });
+</script>
+
+<script type="text/javascript">
+    gvChartInit();
+    $(document).ready(function(){
+        $('#myTable2').gvChart({
+            chartType: 'PieChart',
+            gvSettings: {
+                vAxis: {title: 'No of players'},
+                hAxis: {title: 'Month'},
+                width: 600,
+                height: 350
+            }
+        });
+    });
+</script>
 
 </body>
 </html>

@@ -1,0 +1,482 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<head>
+    <title>data analysis</title>
+
+
+
+<style type="text/css">
+    @-webkit-keyframes animate-width {
+  0% {
+    width: 0;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+@-moz-keyframes animate-width {
+  0% {
+    width: 0;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+@keyframes animate-width {
+  0% {
+    width: 0;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+@-webkit-keyframes animate-height {
+  0% {
+    height: 0;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+@-moz-keyframes animate-height {
+  0% {
+    height: 0;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+@keyframes animate-height {
+  0% {
+    height: 0;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+body {
+  background-color: #3b4150;
+  font-family: arial, sans-serif;/*字体*/
+  color: #cdcdcd;/*字色*/
+}
+
+.bar-chart {
+  height: 380px;
+  width: 70%;
+  position: relative;
+  margin: 50px auto 0;
+}
+.bar-chart * {
+  box-sizing: border-box;
+}
+.bar-chart .graph {
+  height: 283px;
+  position: relative;
+}
+.bar-chart .bars {
+  height: 253px;/* 柱状图柱的高度*/
+  padding: 0 2%;
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+}
+.bar-chart .bar-group {
+  display: block;
+  float: left;
+  height: 100%;
+  position: relative;
+  width: 12%;
+}
+.bar-chart .bar-group:last-child {
+  margin-right: 0;
+}
+.bar-chart .bar-group .bar {
+  visibility: hidden;
+  height: 0;
+  -webkit-animation: animate-height;
+  -moz-animation: animate-height;
+  animation: animate-height;
+  animation-timing-function: cubic-bezier(0.35, 0.95, 0.67, 0.99);
+  -webkit-animation-timing-function: cubic-bezier(0.35, 0.95, 0.67, 0.99);
+  -moz-animation-timing-function: cubic-bezier(0.35, 0.95, 0.67, 0.99);
+  animation-duration: 0.4s;
+  -webkit-animation-duration: 0.4s;
+  -moz-animation-duration: 0.4s;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  box-shadow: 1px 0 2px rgba(0, 0, 0, 0.15);
+  border: 1px solid #2d2d2d;
+  border-radius: 3px 3px 0 0;
+  bottom: 0;
+  cursor: pointer;
+  height: 0;
+  position: absolute;
+  text-align: center;
+  width: 25%;
+}
+.bar-chart .bar-group .bar:nth-child(2) {
+  left: 35%;
+}
+.bar-chart .bar-group .bar:nth-child(3) {
+  left: 70%;
+}
+
+
+
+
+.bar-chart .bar-group .bar span {
+  display: none;
+}
+.bar-chart .bar-group .bar-1 {
+  animation-delay: 0.3s;
+  -webkit-animation-delay: 0.3s;
+}
+.bar-chart .bar-group .bar-2 {
+  animation-delay: 0.4s;
+  -webkit-animation-delay: 0.4s;
+}
+.bar-chart .bar-group .bar-3 {
+  animation-delay: 0.5s;
+  -webkit-animation-delay: 0.5s;
+}
+.bar-chart .bar-group .bar-4 {
+  animation-delay: 0.6s;
+  -webkit-animation-delay: 0.6s;
+}
+.bar-chart .bar-group .bar-5 {
+  animation-delay: 0.7s;
+  -webkit-animation-delay: 0.7s;
+}
+.bar-chart .bar-group .bar-6 {
+  animation-delay: 0.8s;
+  -webkit-animation-delay: 0.8s;
+}
+.bar-chart .bar-group .bar-7 {
+  animation-delay: 0.9s;
+  -webkit-animation-delay: 0.9s;
+}
+.bar-chart .bar-group .bar-8 {
+  animation-delay: 1s;
+  -webkit-animation-delay: 1s;
+}
+.bar-chart .bar-group .bar-9 {
+  animation-delay: 1.1s;
+  -webkit-animation-delay: 1.1s;
+}
+.bar-chart .bar-group .bar-10 {
+  animation-delay: 1.2s;
+  -webkit-animation-delay: 1.2s;
+}
+.bar-chart .bar-group .bar-11 {
+  animation-delay: 1.3s;
+  -webkit-animation-delay: 1.3s;
+}
+.bar-chart .bar-group .bar-12 {
+  animation-delay: 1.4s;
+  -webkit-animation-delay: 1.4s;
+}
+.bar-chart .bar-group .bar-13 {
+  animation-delay: 1.5s;
+  -webkit-animation-delay: 1.5s;
+}
+.bar-chart .bar-group .bar-14 {
+  animation-delay: 1.6s;
+  -webkit-animation-delay: 1.6s;
+}
+.bar-chart .bar-group .bar-15 {
+  animation-delay: 1.7s;
+  -webkit-animation-delay: 1.7s;
+}
+
+
+
+
+.bar-chart ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.bar-chart .x-axis {
+  bottom: 0;
+  position: absolute;
+  text-align: center;
+  width: 100%;
+}
+.bar-chart .x-axis li {
+  float: left;/*左浮动*/
+  margin-left: 3%;
+  font-size: 11px;
+  width: 5%;
+}
+.bar-chart .x-axis li:last-child {
+  margin-right: 0;
+}
+.bar-chart .y-axis {
+  position: absolute;
+  text-align: right;
+  width: 100%;
+}
+.bar-chart .y-axis li {
+  border-top: 1px solid #4e5464;
+  display: block;
+  height: 63.25px;
+  width: 100%;
+}
+.bar-chart .y-axis li span {
+  display: block;
+  font-size: 11px;
+  margin: -10px 0 0 -60px;
+  padding: 0 10px;
+  width: 40px;
+}
+
+
+.bar-chart .stat-1 {
+  background-image: -webkit-linear-gradient(left, #ff4500 0%, #ff4500 47%, #cf3a02 50%, #cf3a02 100%);
+  background-image: linear-gradient(to right, #ff4500 0%, #ff4500 47%, #cf3a02 50%, #cf3a02 100%);
+}
+.bar-chart .stat-2 {
+  background-image: -webkit-linear-gradient(left, #b8f123 0%, #b8f123 47%, #79a602 50%, #79a602 100%);
+  background-image: linear-gradient(to right, #b8f123 0%, #b8f123 47%, #79a602 50%, #79a602 100%);
+}
+.bar-chart .stat-3 {
+  background-image: -webkit-linear-gradient(left, #00c5ff 0%, #00c5ff 47%, #0383a9 50%, #0383a9 100%);
+  background-image: linear-gradient(to right, #00c5ff 0%, #00c5ff 47%, #0383a9 50%, #0383a9 100%);
+}
+</style>
+
+<style type="text/css">a:link {color: #ffffff;}a:visited {color: #ff0001;}</style>
+
+</head>
+<body>
+<a href="main.html"><div align="right" style="font-family: 'Arial Black';font-size: 30px">go back to main page</div></a>
+<p style="font-size: 60px; " align="center">GDP</p>
+<div class="bar-chart">
+   <div class="graph" >
+      <ul class="x-axis">
+         <li><span>Argentina</span></li>
+         <li><span>Bolivia</span></li>
+         <li><span>Brazil</span></li>
+         <li><span>Chile</span></li>
+         <li><span>Colombia</span></li>
+         <li><span>Ecuador</span></li>
+         <li><span>Guyana</span></li>
+         <li><span>Paraguay</span></li>
+         <li><span>Peru</span></li>
+         <li><span>Suriname</span></li>
+         <li><span>Uruguay</span></li>
+         <li><span>Venezuela</span></li>
+      </ul>
+      <ul class="y-axis">
+         <li><span>50000</span></li>
+         <li><span>37500</span></li>
+         <li><span>25000</span></li>
+         <li><span>12500</span></li>
+         <li><span>0</span></li>
+      </ul>
+      <div class="bars" style=" margin-left: 2.5%;">
+         <div class="bar-group">
+            <div class="bar bar-1 stat-1" style="height: 91.409%;">
+               <span>45704.691</span>
+            </div>
+            <div class="bar bar-2 stat-2" style="height: 29.755%; margin-left: 31%;">
+               <span>14877.28</span>
+            </div>
+            <div class="bar bar-3 stat-3" style="height: 64.497%; margin-left: 63%;">
+               <span>32248.461</span>
+            </div>
+         </div>
+         <div class="bar-group"style=" margin-left: 12.5%;">
+            <div class="bar bar-1 stat-1" style="height: 97.812%;">
+               <span>48905.996</span>
+            </div>
+            <div class="bar bar-2 stat-2" style="height: 52.961%; margin-left: 33%;">
+               <span>26480.533</span>
+            </div>
+            <div class="bar bar-3 stat-3" style="height: 47.332%; margin-left: 64%;">
+               <span>23666.068</span>
+            </div>
+         </div>
+         <div class="bar-group" style=" margin-left: 13.2%;">
+            <div class="bar bar-1 stat-1" style="height: 39.768%;">
+               <span>19883.932</span>
+            </div>
+            <div class="bar bar-2 stat-2" style="height: 44.236%;margin-left: 37%;">
+               <span>22117.936</span>
+            </div>
+            <div class="bar bar-3 stat-3" style="height: 37.245%; margin-left: 67%;">
+               <span>18622.525</span>
+            </div>
+         </div>
+         <div class="bar-group" style=" margin-left: 12.8%;">
+            <div class="bar bar-1 stat-1" style="height: 81.303%;">
+               <span>40651.527</span>
+            </div>
+            <div class="bar bar-2 stat-2" style="height: 84.002%;margin-left: 33%;">
+               <span>42000.82</span>
+            </div>
+            <div class="bar bar-3 stat-3" style="height: 71.023%; margin-left: 70%;">
+               <span>35511.656</span>
+            </div>
+         </div>
+
+
+      </div>
+   </div>
+</div>
+
+<p style="font-size: 60px; " align="center">population</p>
+<h3 align="center">(thousand people)</h3>
+<div class="bar-chart">
+   <div class="graph" >
+      <ul class="x-axis">
+         <li><span>Argentina</span></li>
+         <li><span>Bolivia</span></li>
+         <li><span>Brazil</span></li>
+         <li><span>Chile</span></li>
+         <li><span>Colombia</span></li>
+         <li><span>Ecuador</span></li>
+         <li><span>Guyana</span></li>
+         <li><span>Paraguay</span></li>
+         <li><span>Peru</span></li>
+         <li><span>Suriname</span></li>
+         <li><span>Uruguay</span></li>
+         <li><span>Venezuela</span></li>
+      </ul>
+      <ul class="y-axis">
+         <li><span>24</span></li>
+         <li><span>18</span></li>
+         <li><span>12</span></li>
+         <li><span>6</span></li>
+         <li><span>0</span></li>
+      </ul>
+      <div class="bars" style=" margin-left: 2.5%;">
+         <div class="bar-group">
+            <div class="bar bar-1 stat-1" style="height: 18.3%;">
+               <span>43847.43</span>
+            </div>
+            <div class="bar bar-2 stat-2" style="height: 4.5%; margin-left: 31%;">
+               <span>10887.88</span>
+            </div>
+            <div class="bar bar-3 stat-3" style="height: 86.5%; margin-left: 63%;">
+               <span>207652.86</span>
+            </div>
+         </div>
+         <div class="bar-group"style=" margin-left: 12.5%;">
+            <div class="bar bar-1 stat-1" style="height: 7.5%;">
+               <span>17909.75</span>
+            </div>
+            <div class="bar bar-2 stat-2" style="height: 20.3%; margin-left: 33%;">
+               <span>48653.42</span>
+            </div>
+            <div class="bar bar-3 stat-3" style="height: 6.8%; margin-left: 64%;">
+               <span>16385.07</span>
+            </div>
+         </div>
+         <div class="bar-group" style=" margin-left: 13.2%;">
+            <div class="bar bar-1 stat-1" style="height: 0.3%;">
+               <span>773.3</span>
+            </div>
+            <div class="bar bar-2 stat-2" style="height: 13.2%;margin-left: 37%;">
+               <span>31773.84</span>
+            </div>
+            <div class="bar bar-3 stat-3" style="height: 2.8%; margin-left: 67%;">
+               <span>6725.31</span>
+            </div>
+         </div>
+         <div class="bar-group" style=" margin-left: 12.8%;">
+            <div class="bar bar-1 stat-1" style="height: 0.2%;">
+               <span>558.37</span>
+            </div>
+            <div class="bar bar-2 stat-2" style="height: 1.4%;margin-left: 33%;">
+               <span>3444.01</span>
+            </div>
+            <div class="bar bar-3 stat-3" style="height: 13.2%; margin-left: 70%;">
+               <span>31568.18</span>
+            </div>
+         </div>
+
+
+      </div>
+   </div>
+</div>
+
+<p style="font-size: 60px; " align="center">The Role Of South American Immigration Rank </p>
+<div class="bar-chart">
+   <div class="graph" >
+      <ul class="x-axis">
+         <li><span>Argentina</span></li>
+         <li><span>Bolivia</span></li>
+         <li><span>Brazil</span></li>
+         <li><span>Chile</span></li>
+         <li><span>Colombia</span></li>
+         <li><span>Ecuador</span></li>
+         <li><span>Guyana</span></li>
+         <li><span>Paraguay</span></li>
+         <li><span>Peru</span></li>
+         <li><span>Suriname</span></li>
+         <li><span>Uruguay</span></li>
+         <li><span>Venezuela</span></li>
+      </ul>
+      <ul class="y-axis">
+         <li><span>70</span></li>
+         <li><span>65</span></li>
+         <li><span>60</span></li>
+         <li><span>55</span></li>
+         <li><span>50</span></li>
+      </ul>
+      <div class="bars" style=" margin-left: 2.5%;">
+         <div class="bar-group">
+            <div class="bar bar-1 stat-1" style="height: 91.505%;">
+               <span>{{score[0]}}</span>
+            </div>
+            <div class="bar bar-2 stat-2" style="height: 86.1%; margin-left: 31%;">
+               <span>{{score[1]}}</span>
+            </div>
+            <div class="bar bar-3 stat-3" style="height: 89.21%; margin-left: 63%;">
+               <span>{{score[2]}}</span>
+            </div>
+         </div>
+         <div class="bar-group"style=" margin-left: 12.5%;">
+            <div class="bar bar-1 stat-1" style="height: 91.265%;">
+               <span>{{score[3]}}</span>
+            </div>
+            <div class="bar bar-2 stat-2" style="height: 72.69%; margin-left: 33%;">
+               <span>{{score[4]}}</span>
+            </div>
+            <div class="bar bar-3 stat-3" style="height: 16.13%; margin-left: 64%;">
+               <span>{{score[5]}}</span>
+            </div>
+         </div>
+         <div class="bar-group" style=" margin-left: 13.2%;">
+            <div class="bar bar-1 stat-1" style="height: 49.215%;">
+               <span>{{score[6]}}</span>
+            </div>
+            <div class="bar bar-2 stat-2" style="height: 71.315%;margin-left: 37%;">
+               <span>{{score[7]}}</span>
+            </div>
+            <div class="bar bar-3 stat-3" style="height: 42.74%; margin-left: 67%;">
+               <span>6725.31</span>
+            </div>
+         </div>
+         <div class="bar-group" style=" margin-left: 12.8%;">
+            <div class="bar bar-1 stat-1" style="height: 80.54%;">
+               <span>558.37</span>
+            </div>
+            <div class="bar bar-2 stat-2" style="height: 8.86%;margin-left: 33%;">
+               <span>3444.01</span>
+            </div>
+            <div class="bar bar-3 stat-3" style="height: 10.02%; margin-left: 70%;">
+               <span>31568.18</span>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<h2 align="center">There are several common immigration index impact factors</h2>
+<h4 align="center">Final score = hospital beds * 8% + money on per student * 21% + PM2.5 * 18% + deposit interest * 5%<br> + forest coverage * 16% + GDP per person * 14% + inflation rate * 7% + life expectancy * 11  %</h4>
+</body>
+</html>
+
